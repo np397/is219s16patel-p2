@@ -71,6 +71,12 @@ $(document).ready( function() {
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
 	
+	$(".moreIndicator").click(function()
+	{
+		$( "img.rot90" ).toggleClass("rot270",3000);
+		$(".details").slideToggle(1000);
+	});
+	
 });
 
 window.addEventListener('load', function() {
