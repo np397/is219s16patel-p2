@@ -69,7 +69,7 @@ mRequest.onreadystatechange = function() {
 		} 
 	} 
 }; 
-mRequest.open("GET",mURL, true); 
+mRequest.open("GET",mUrl, true); 
 mRequest.send();
 
 
