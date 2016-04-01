@@ -66,7 +66,16 @@ var $_GET = getQueryParams(document.location.search);
 var mRequest = new XMLHttpRequest();
 var mImages = [];
 var mJson;
-var mURL = $_GET["json"]; 
+var mURL;
+
+var mURL;
+if($_GET["json"] == undefined)
+{
+	mURL = "images.json";
+}
+else{
+	mURL = $_GET["json"]; 
+}
 
 mRequest.onreadystatechange = function() { 
 	
