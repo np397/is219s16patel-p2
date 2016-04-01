@@ -31,17 +31,21 @@ function animate() {
 }
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
+// Counter for the mImages array
+var mCurrentIndex = 0;
 
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
+	$("#photo").attr('src', mImages[mCurrentIndex].img);
+	mCurrentIndex++;
 	console.log('swap photo');
 }
 
-// Counter for the mImages array
-var mCurrentIndex = 0;
+mCurrentIndex++;
+
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
