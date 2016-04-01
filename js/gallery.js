@@ -51,8 +51,6 @@ function swapPhoto() {
 	console.log('swap photo');
 }
 
-mCurrentIndex++;
-
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
