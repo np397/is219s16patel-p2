@@ -43,8 +43,11 @@ function swapPhoto() {
 	$(".location").text("Location: "+mImages[mCurrentIndex].location);
 	$(".description").text("Description: "+mImages[mCurrentIndex].description);
 	$(".date").text("Date: "+mImages[mCurrentIndex].date);
-	console.log(mImages[mCurrentIndex]);
+	
 	mCurrentIndex++;
+		if(mCurrentIndex >=  mImages.length){
+		mCurrentIndex = 0;
+	}
 	console.log('swap photo');
 }
 
