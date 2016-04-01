@@ -31,7 +31,7 @@ function animate() {
 }
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
-// Counter for the mImages array
+
 var mCurrentIndex = 0;
 
 function swapPhoto() {
@@ -39,8 +39,8 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
-	console.log(mCurrentIndex);
-	if(mCurrentIndex < 0)
+console.log(mCurrentIndex);
+if(mCurrentIndex < 0)
 	{
 		mCurrentIndex =  mImages.length-1;
 	}
@@ -48,13 +48,15 @@ function swapPhoto() {
 	$(".location").text("Location: "+mImages[mCurrentIndex].location);
 	$(".description").text("Description: "+mImages[mCurrentIndex].description);
 	$(".date").text("Date: "+mImages[mCurrentIndex].date);
-		
+	
 	mCurrentIndex++;
 	if(mCurrentIndex >=  mImages.length){
 		mCurrentIndex = 0;
-	}	
+	}
+	
+	
+	
 }
-
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
@@ -64,11 +66,12 @@ var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
+var mImages = [];
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'images.json';
-
+var mURL = "images.json"; 
+var mRequest = new XMLHttpRequest(); 
 
 mRequest.onreadystatechange = function() { 
 	
@@ -80,15 +83,16 @@ mRequest.onreadystatechange = function() {
 			for(var i=0; i < mJson.images.length;i++)
 			{
 				mImages.push(new GalleryImage(mJson.images[i].imgLocation,mJson.images[i].description,mJson.images[i].date,mJson.images[i].imgPath));
-				console.log(mImages[i]);
+
 			}
-		
+			
 		} catch(err) { 
 			console.log(err.message);
 		} 
 	} 
 }; 
-mRequest.open("GET",mUrl, true); 
+	
+mRequest.open("GET",mURL, true); 
 mRequest.send();
 
 
@@ -111,8 +115,7 @@ $(document).ready( function() {
 		$( "img.rot90" ).toggleClass("rot270",3000);
 		$(".details").slideToggle(1000);
 	});
-	
-	
+
 	$("#prevPhoto").click(function()
 	{
 		mCurrentIndex -= 2;
@@ -123,7 +126,9 @@ $(document).ready( function() {
 	$("#nextPhoto").click(function()
 	{
 		swapPhoto();
+		
 	});
+	
 });
 
 window.addEventListener('load', function() {
@@ -132,9 +137,10 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage(location,description,date,img) {
+function GalleryImage(location,description,date,img){
 	this.location = location;
 	this.description = description;
 	this.date = date;
 	this.img = img;
 }
+
