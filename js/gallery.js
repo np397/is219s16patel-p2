@@ -40,6 +40,10 @@ function swapPhoto() {
 	//with a new image from your images array which is loaded 
 	//from the JSON string
 	$("#photo").attr('src', mImages[mCurrentIndex].img);
+	$(".location").text("Location: "+mImages[mCurrentIndex].location);
+	$(".description").text("Description: "+mImages[mCurrentIndex].description);
+	$(".date").text("Date: "+mImages[mCurrentIndex].date);
+	console.log(mImages[mCurrentIndex]);
 	mCurrentIndex++;
 	console.log('swap photo');
 }
