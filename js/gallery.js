@@ -63,6 +63,12 @@ mRequest.onreadystatechange = function() {
 		try { 
 			mJson = JSON.parse(mRequest.responseText);
 			console.log(mJson);
+			
+			for(var i=0; i < mJson.images.length;i++)
+			{
+				mImages.push(new GalleryImage(mJson.images[i].imgPath,mJson.images[i].imgLocation,mJson.images[i].description,mJson.images[i].date));
+				console.log(mImages[i]);
+			}
 		
 		} catch(err) { 
 			console.log(err.message);
