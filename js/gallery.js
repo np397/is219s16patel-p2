@@ -110,6 +110,12 @@ $(document).ready( function() {
 		$(".details").slideToggle(1000);
 	});
 	
+	$("#nextPhoto").click(function()
+	{
+		swapPhoto();
+	});
+	
+	
 });
 
 window.addEventListener('load', function() {
